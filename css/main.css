@@ -3,3 +3,21 @@
 /** {
     font-family: 'Montserrat', serif;
 }*/
+
+.navbar {
+    background-color: #241663 !important;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    background-color: #160f30;
+    color: white;
+}
