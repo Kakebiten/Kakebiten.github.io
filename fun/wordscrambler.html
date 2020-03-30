@@ -32,8 +32,11 @@
     <body class="main-container center-align" style="text-align: center; vertical-align: middle;">
         <div class="sub-container center-align" style="text-align: center;">
             <input class="form-control" style="display: inline;" id="input" placeholder="Enter word..."></input>
-            <button class="btn btn-primary" id="button" style="width: 300px; margin-top: 5px;">Scramble!</button>
-            <p style="margin: 0; padding: 0;"></p>
+            <button class="btn btn-primary" id="button" style="width: 300px; margin-top: 5px; margin-bottom: 5px;">Scramble!</button>
+            <input type="radio" name="mode" id="mode" value="word" style="margin: 0; padding: 0;" checked>
+            <label for="mode" style="margin: 0; padding: 0;">Words</label>
+            <input type="radio" name="mode" id="mode" value="letter" style="margin: 0; padding: 0;">
+            <label for="mode" style="margin: 0; padding: 0;">Letters</label>
         </div>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script>
@@ -50,11 +53,17 @@
             }
             $("#button").click(() => {
                 var word = $("#input").val();
-                var splitWord = word.split("");
-                shuffle(splitWord);
-                console.log(splitWord);
-                var finishedWord = splitWord.join('')
-                $("#input").val(finishedWord);
+                if($("#mode:checked").val() == "word") {
+                    var splitWord = word.split(" ");
+                    shuffle(splitWord);
+                    var finishedWord = splitWord.join(' ');
+                    $("#input").val(finishedWord);
+                } else {
+                    var splitLetters = word.split("");
+                    shuffle(splitLetters);
+                    var finishedLetter = splitLetters.join('')
+                    $("#input").val(finishedLetter);
+                }
             });
         </script>
     </body>
