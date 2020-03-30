@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Word Scrambler</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <style>
+            body {
+                background: url(https://images.unsplash.com/photo-1529963183134-61a90db47eaf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80) no-repeat fixed center;
+                background-size: cover;
+            }
+            .main-container {
+                position: relative;
+            }
+            .sub-container {
+                background: white;
+                padding: 40px;
+                border-radius: 5px;
+                border: 2px solid lightgray;
+            }
+            .center-align {
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+        </style>
+    </head>
+    <body class="main-container center-align" style="text-align: center; vertical-align: middle;">
+        <div class="sub-container center-align" style="text-align: center;">
+            <input class="form-control" style="display: inline;" id="input" placeholder="Enter word..."></input>
+            <button class="btn btn-primary" id="button" style="width: 300px; margin-top: 5px;">Scramble!</button>
+            <p style="margin: 0; padding: 0;"></p>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script>
+            function shuffle(array) {
+                var currentIndex = array.length, temporaryValue, randomIndex;
+                while (0 !== currentIndex) {
+                    randomIndex = Math.floor(Math.random() * currentIndex);
+                    currentIndex -= 1;
+                    temporaryValue = array[currentIndex];
+                    array[currentIndex] = array[randomIndex];
+                    array[randomIndex] = temporaryValue;
+                }
+                return array;
+            }
+            $("#button").click(() => {
+                var word = $("#input").val();
+                var splitWord = word.split("");
+                shuffle(splitWord);
+                console.log(splitWord);
+                var finishedWord = splitWord.join('')
+                $("#input").val(finishedWord);
+            });
+        </script>
+    </body>
+</html>
