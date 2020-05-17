@@ -40,6 +40,7 @@
         <div style="margin-left: 20px; margin-top: 40px;">
             <h3>Downloads</h3>
             <a id="pokerdownload" href="#">Poker Game</a>
+            <a id="hibymdownload" href="#">Every possible combination of "The Big Bang Theory" and "How I Met Your Mother" <span id="hibymsorteddownload">(Sorted version)</span></a>
         </div>
         <!--<footer class="footer">
             <div class="row">
@@ -57,6 +58,13 @@
         <script>
             $("#pokerdownload").click(() => {
                 download("./downloads/Poker Game-0.3.1-win.zip");
-            });</script>
+            });
+            $("hibymdownload").click(() => {
+                download("./downloads/outputHIBYM.txt");
+            })
+            $("hibymsorteddownload").click(() => {
+                download("./downloads/outputSortedHIBYM.txt");
+            })
+        </script>
     </body>
 </html>
