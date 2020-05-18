@@ -39,10 +39,10 @@
         </nav>
         <div style="margin-left: 20px; margin-top: 40px;">
             <h3>Downloads</h3>
-            <a id="pokerdownload" href="#">Poker Game</a>
+            <a id="pokerdownload" href="./downloads/Poker Game-0.3.1-win.zip">Poker Game</a>
             <br>
-            <a id="hibymdownload" href="#">Every possible combination of "The Big Bang Theory" and "How I Met Your Mother"</a>
-            <a id="hibymsorteddownload" href="#">(Sorted version)</a>
+            <a id="hibymdownload" href="./downloads/outputHIBYM.txt" download="outputHIBYM.txt">Every possible combination of "The Big Bang Theory" and "How I Met Your Mother"</a>
+            <a id="hibymsorteddownload" href="./downloads/outputSortedHIBYM.txt" download="outputSortedHIBYM.txt">(Sorted version)</a>
         </div>
         <!--<footer class="footer">
             <div class="row">
@@ -55,18 +55,6 @@
         </footer>-->
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
-        <script src="js/download.js"></script>
         <script src="js/main.js"></script>
-        <script>
-            $("#pokerdownload").click(() => {
-                download("./downloads/Poker Game-0.3.1-win.zip");
-            });
-            $("hibymdownload").click(() => {
-                download("./downloads/outputHIBYM.txt");
-            })
-            $("hibymsorteddownload").click(() => {
-                download("./downloads/outputSortedHIBYM.txt");
-            })
-        </script>
     </body>
 </html>
